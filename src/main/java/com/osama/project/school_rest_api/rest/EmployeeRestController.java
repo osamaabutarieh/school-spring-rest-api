@@ -23,7 +23,7 @@ public class EmployeeRestController {
 
     // add mapping for GET /employees/{employeeId}
 
-    @GetMapping("/employees/{employeeId}")
+    @GetMapping("/employee/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
 
         Employee theEmployee = employeeService.findById(employeeId);
@@ -37,7 +37,7 @@ public class EmployeeRestController {
 
     // add mapping for POST /employees - add new employee
 
-    @PostMapping("/employees")
+    @PostMapping("/employee")
     public Employee addEmployee(@RequestBody Employee theEmployee) {
 
         // also just in case they pass an id in JSON ... set id to 0
@@ -52,7 +52,7 @@ public class EmployeeRestController {
 
     // add mapping for PUT /employees - update existing employee
 
-    @PutMapping("/employees")
+    @PutMapping("/employee")
     public Employee updateEmployee(@RequestBody Employee theEmployee) {
 
         Employee dbEmployee = employeeService.save(theEmployee);
@@ -62,7 +62,7 @@ public class EmployeeRestController {
 
     // add mapping for DELETE /employees/{employeeId} - delete employee
 
-    @DeleteMapping("/employees/{employeeId}")
+    @DeleteMapping("/employee/{employeeId}")
     public String deleteEmployee(@PathVariable int employeeId) {
 
         Employee tempEmployee = employeeService.findById(employeeId);

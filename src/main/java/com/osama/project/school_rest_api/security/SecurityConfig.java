@@ -44,17 +44,17 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.authorizeHttpRequests(configurer ->
             configurer
-                    .requestMatchers(HttpMethod.GET,"/api/employees", "/api/employees/**").hasRole("EMPLOYEE")
-                    .requestMatchers(HttpMethod.POST,"/api/employees").hasRole("MANAGER")
-                    .requestMatchers(HttpMethod.PUT,"/api/employees").hasRole("MANAGER")
+                    .requestMatchers(HttpMethod.GET,"/api/employees", "/api/employees/**").hasRole("EMPLOYEE,STUDENT,ADMIN")
+                    .requestMatchers(HttpMethod.POST,"/api/employees").hasRole("MANAGER,ADMIN")
+                    .requestMatchers(HttpMethod.PUT,"/api/employees").hasRole("MANAGER,ADMIN")
                     .requestMatchers(HttpMethod.DELETE,"/api/employees").hasRole("ADMIN")
-                    .requestMatchers(HttpMethod.GET,"/api/students","/api/students/**").hasRole("EMPLOYEE")
-                    .requestMatchers(HttpMethod.POST,"/api/students").hasRole("MANAGER")
-                    .requestMatchers(HttpMethod.PUT,"/api/students").hasRole("MANAGER")
+                    .requestMatchers(HttpMethod.GET,"/api/students","/api/students/**").hasRole("EMPLOYEE,STUDENT,ADMIN")
+                    .requestMatchers(HttpMethod.POST,"/api/students").hasRole("MANAGER,ADMIN")
+                    .requestMatchers(HttpMethod.PUT,"/api/students").hasRole("MANAGER,ADMIN")
                     .requestMatchers(HttpMethod.DELETE,"/api/students").hasRole("ADMIN")
-                    .requestMatchers(HttpMethod.GET,"/api/courses","/api/courses/**").hasRole("EMPLOYEE,STUDENT")
-                    .requestMatchers(HttpMethod.POST,"/api/courses").hasRole("MANAGER")
-                    .requestMatchers(HttpMethod.PUT,"/api/courses").hasRole("MANAGER")
+                    .requestMatchers(HttpMethod.GET,"/api/courses","/api/courses/**").hasRole("EMPLOYEE,STUDENT,ADMIN")
+                    .requestMatchers(HttpMethod.POST,"/api/courses").hasRole("MANAGER,ADMIN")
+                    .requestMatchers(HttpMethod.PUT,"/api/courses").hasRole("MANAGER,ADMIN")
                     .requestMatchers(HttpMethod.DELETE,"/api/courses").hasRole("ADMIN")
                 );
 

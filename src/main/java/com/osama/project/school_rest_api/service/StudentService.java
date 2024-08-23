@@ -12,6 +12,7 @@ import java.util.Optional;
 public class StudentService implements CrudService<Student,Integer> {
 
 
+    @Autowired
     private StudentRepository studentRepository;
 
     @Override
