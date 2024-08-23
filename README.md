@@ -72,11 +72,15 @@ Note that I made this rest api and appliyed security (Basic Auth) into it so the
  - MANAGER
  - ADMIN
  - STUDENT
+
+
 And every roles can access api but: 
  - STUDENT => can GET courses/employees/students
  - EMPLOYEE => can GET courses/employees/students
  - MANAGER => can GET/POST/PUT employees/students/courses
  - ADMIN => can DELETE employee/student/courses and GET/POST/PUT (can doing everything)
+
+
 
 Also, there is three users: 
  - john => is a employee
